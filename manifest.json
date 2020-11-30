@@ -1,0 +1,28 @@
+{
+    "name": "Scraping Extension",
+    "version": "1.0",
+    "description": "Build an Extension!",
+    "permissions": ["identity", "identity.email","activeTab","declarativeContent","storage","tabs","*://SampleProject-env.eba-d26fhkqt.us-east-2.elasticbeanstalk.com/*"],
+    "background" : {
+        "scripts" : [ "background.js" ]
+      },
+      "content_scripts": [
+        {
+          "matches": ["http://SampleProject-env.eba-d26fhkqt.us-east-2.elasticbeanstalk.com/*", "https://www.e-food.gr/*" , "http://mitsosdomain.com/*"],
+          "all_frames": true,
+          "js": ["content.js"]
+        }
+      ],
+    "browser_action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "images/dill.png"
+          }
+      },
+      "icons": {
+        "16": "images/dill.png"
+      },
+     
+    "manifest_version": 2
+    
+}
