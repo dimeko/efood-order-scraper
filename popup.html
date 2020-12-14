@@ -2,23 +2,41 @@
   <html>
     <head>
       <style>
-        button {
+        .button-order {
           border: none;
           background-color: inherit;
-          padding: 14px 28px;
+          transform: translate(57%,150%);
+          margin: 14px 15px;
           font-size: 16px;
           cursor: pointer;
           display: inline-block;
         }
-        button:hover {background: #eee;}
+        .button-order:hover {background: #eee;}
 
         .takeorder {color: black}
+
+        .navbar {
+          list-style-type: none;
+          float: left;
+          margin-right: 50%;
+          overflow: hidden;
+          background-color: white;
+        }
+
+        .nav-item {
+          color: white;
+          text-decoration: none;
+        }
       </style>
     </head>
     <body>
-        <div>
-
-            <button  id="scrapePage">Get order</button>
+        <div style="width: 200px; height: 300px;">
+          <div id="upper-button">
+            <button style="text-decoration: none; width: 100%;" id='to-page' href="http://sampleproject-env.eba-d26fhkqt.us-east-2.elasticbeanstalk.com/"><strong><h2>Dilly</h2></strong></button>
+          </div>
+            <div style="padding-bottom: 10px;" id="order">
+                <button class="button-order" id="scrapePage">Get order</button>
+            </div>    
             <script src="popup.js"></script>
        </div>
     </body>

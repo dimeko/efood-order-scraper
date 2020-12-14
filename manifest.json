@@ -8,7 +8,7 @@
       },
       "content_scripts": [
         {
-          "matches": ["http://SampleProject-env.eba-d26fhkqt.us-east-2.elasticbeanstalk.com/*", "https://www.e-food.gr/*" , "http://mitsosdomain.com/*"],
+          "matches": ["http://sampleproject-env.eba-d26fhkqt.us-east-2.elasticbeanstalk.com/*", "https://www.e-food.gr/*" , "http://mitsosdomain.com/*"],
           "all_frames": true,
           "js": ["content.js"]
         }

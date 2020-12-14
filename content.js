@@ -27,3 +27,10 @@ window.addEventListener("message", function(event) {
     port.postMessage(event.data.text);
   }
 }, false);
+
+
+chrome.extension.onMessage.addListener(function(request,response,sendResponse){
+  if(request.message=='redirect'){
+    console.log(request.message);
+    chrome.tabs.update({url: "http://mitsosdomain.com/see-order"});  }
+})

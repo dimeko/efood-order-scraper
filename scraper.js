@@ -15,7 +15,7 @@ async function scrapePage(){
     var itemsNum = document.getElementsByClassName('cart-product-list')[0].children;
     // var objJson = JSON.parse(Order);
 
-    for (i=0;i<itemsNum.length;i++){
+    for (var i=0;i<itemsNum.length;i++){
     
         var a = itemsNum[i].firstChild.firstChild.nextSibling.firstChild.textContent;
         var b = itemsNum[i].firstChild.lastChild.textContent;
@@ -29,23 +29,16 @@ async function scrapePage(){
             itemPr: d,
         };
 
-        let Temp = JSON.stringify(newOrder);
-        order.orders[i] = Temp; 
+        // let Temp = JSON.stringify(newOrder);
+        order.orders[i] = newOrder; 
     }
 }
 
 scrapePage();
 
+chrome.runtime.sendMessage({'message': 'send_order' , 'data': order}, function(response) {
+    if(response.answer = "done"){
+        console.log("done");
+    }
+});
 
-if(order.orders[0].itemName!="first"){
-      chrome.runtime.sendMessage({'message':'send', 'data': order},function(response){
-          if(response.answer = "done"){
-              console.log(response.answer);
-          }
-      });
-
-}else{
-    console.log("Items not selected");
-}
-
-    
