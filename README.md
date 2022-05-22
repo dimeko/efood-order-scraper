@@ -4,4 +4,4 @@ Installation is simple. You just clone the files and enable the extension from t
 
 ## Functionality
 
-You can use this extension to scrape the order from e-Food and send it to Dilly.gr (which is still under construction).
+You can use this extension to scrape the order from e-Food.
